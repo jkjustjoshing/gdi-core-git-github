@@ -40,3 +40,22 @@
 .reveal .small {
 	font-size: 70%;
 }
+
+.reveal dl {
+	text-align: left;
+}
+.reveal dl dt {
+	font-weight: bold;
+}
+.reveal dl dt, .reveal dl dd {
+	display: inline;
+}
+.reveal dl dt:before {
+	display: block;
+	content: "";
+	height: 15px;
+}
+.reveal dl dt:after {
+	content: ":";
+	padding-right: 15px;
+}
