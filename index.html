@@ -168,31 +168,21 @@
         <section>
           <section>
             <h3>Installation and Setup</h3>
-            <a href = "http://git-scm.com/downloads" alt ="Download latest version of Git" target ="_blank">
-              <p>Install git</p>
-              <img src = "images/install-git.png" alt = "Download latest version of Git"/>
-            </a>
-          </section>
-          <section>
-            <h3>Installation and Setup</h3>
-            <p>Setup ssh keys</p>
-            <pre><code contenteditable class ="command-line">
-             $ cd ~/.ssh
-            </code></pre>
-            <pre><code contenteditable class ="command-line">
-$ ssh-keygen -t rsa -C "your_email@example.com"
-# Generating public/private rsa key pair.
-# Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-            </code></pre>
-            <pre><code contenteditable class ="command-line">
-Enter passphrase (empty for no passphrase): [Type a passphrase]
-# Enter same passphrase again: [Type passphrase again]
+            <p>Setup ssh keys</p><pre>
+            <code class="string-line">
+<span class="input">ssh-keygen -t rsa -C "your_email@example.com"</span>
+<span class="output">Generating public/private rsa key pair.</span>
+<span class="output">Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]</span>
+
+<span class="output">Enter passphrase (empty for no passphrase): [Type a passphrase]</span>
+
+<span class="output">Enter same passphrase again: [Type passphrase again]</span>
             </code></pre>
           </section>
           <section>
             <h3>Installation and Setup</h3>
             <p>Get SSH Key</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 Your identification has been saved in /Users/you/.ssh/id_rsa.
 # Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
 # The key fingerprint is:
@@ -202,21 +192,30 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
           <section>
             <h3>Installation and Setup</h3>
             <p>Add SSH Key to Github</p>
-            <img src = "images/add-ssh.png" alt ="Steps to add SSH key to github account"/>
+            <ol>
+              <li class="small">Copy the SSH key to your clipboard.</li>
+              <li class="small">In the top right corner of any page, click your profile photo, then click Settings.</li>
+              <li class="small">In the user settings sidebar, click SSH keys.</li>
+              <li class="small">Click New SSH key.</li>
+              <li class="small">In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".</li>
+              <li class="small">Paste your key into the "Key" field.</li>
+              <li class="small">Click Add SSH key.</li>
+            </ol>
+            <a class="small" href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Github's instructions</a>
           </section>
           <section>
             <h3>Installation and Setup</h3>
             <p>Setup name and email in gitconfig</p>
-            <pre><code contenteditable class ="command-line">
-$ git config --global user.name "Your Name Here"
-# Sets the default name for git to use when you commit
+            <pre><code class="command-line">
+<span class="input">git config --global user.name "Your Name Here"</span>
+<span class="output">Sets the default name for git to use when you commit</code>
             </code></pre>
-            <pre><code contenteditable class ="command-line">
-$ git config --global user.email "your_email@example.com"
-# Sets the default email for git to use when you commit
+            <pre><code class="command-line">
+<span class="input">git config --global user.email "your_email@example.com"</span>
+<span class="output">Sets the default email for git to use when you commit</span>
             </code></pre>
-            <pre><code contenteditable class ="command-line">
-$ git config --list
+            <pre><code class="command-line">
+<span class="input">git config --list</span>
             </code></pre>
           </section>
         </section>
@@ -277,7 +276,7 @@ $ git config --list
               <li class="fragment">When we <span class ="green">add</span> a new file, we tell Git to add the file to the repository to be tracked</li>
               <li class="fragment">When we <span class ="green">stage</span> an existing file (also with the keyword 'add'), we are telling Git to track the current state of our file</li>
               <li class="fragment">A <span class ="green">commit</span> saves changes made to a file, not the file as a whole. The commit will have a 'hash' so we can track which changes were committed when and by whom.</li>
-            
+
             </ul>
           </section>
           <section>
@@ -305,7 +304,7 @@ $ git config --list
         <section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing local changes</h4> 
+            <h4>Undoing local changes</h4>
             <p>If you haven't committed yet</p>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
@@ -318,7 +317,7 @@ $ git config --list
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4> 
+            <h4>Undoing staged changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -331,7 +330,7 @@ git checkout hello_world.txt
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4> 
+            <h4>Undoing staged changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -397,7 +396,7 @@ git branch
             <p>Switch to master and look at hello_world.txt</p>
             <pre><code contenteditable class ="command-line">
 git checkout master
-            </code></pre>            
+            </code></pre>
             <p>Switch to version2 and look at hello_world.txt</p>
             <pre><code contenteditable class ="command-line">
 git checkout version2
@@ -440,7 +439,7 @@ git commit -m "Changing first line in version2"
 git merge master
             </code></pre>
             <p class ="fragment">You will be notified of a conflict. Go to the file and fix the problem. Then commit your edits.</p>
-                       
+
           </section>
         </section>
         <!-- GitHub-->
