@@ -37,6 +37,20 @@
 	padding-right: 7px;
 }
 
+.reveal .pre {
+	padding: 10px;
+}
+.reveal .pre code {
+	display: block;
+	word-wrap: break-word;
+	background: #1d1f21;
+    color: #c5c8c6;
+    text-align: left;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 15px;
+}
+
 .reveal .small {
 	font-size: 70%;
 }
