@@ -203,7 +203,7 @@
           <p>Setup name and email in gitconfig</p>
           <pre><code class="command-line">
 <span class="input">git config --global user.name "Your Name Here"</span>
-<span class="output">Sets the default name for git to use when you commit</code>
+<span class="output">Sets the default name for git to use when you commit</span>
           </code></pre>
           <pre><code class="command-line">
 <span class="input">git config --global user.email "your_email@example.com"</span>
@@ -218,7 +218,7 @@
           <section>
             <h3>Your first Local Repository</h3>
             <p>Go to home directory</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   cd ~/
   OR
   cd Users\username
@@ -238,11 +238,11 @@
             <h3>Add files</h3>
             <p>Create a new hello_world.txt file in your new folder</p>
             <p>Check repo status</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   git status
             </code></pre>
             <p>Tell Git to track our new file</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   git add hello_world.txt
   git status
             </code></pre>
@@ -251,11 +251,11 @@
           <section>
             <h3>Changes and commits</h3>
             <p>Open hello_world.txt and add some more text</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   git status
             </code></pre>
             <p>Stage and commit the change</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   git add hello_world.txt
   git commit -m "First commit. Added hello world to repository."
             </code></pre>
@@ -275,10 +275,10 @@
           </section>
           <section>
             <h3>Look at our progress</h3>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   git log
             </code></pre>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   commit [HASH HERE]
   Author: Your name <you@your-email.com>
   Date:   [DATE HERE]
@@ -288,7 +288,7 @@
           </section>
           <section>
             <h3>Look at our progress, visually</h3>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
   gitk
             </code></pre>
             <img src = "images/gitk.png" alt ="Image of commits for this curriculum repo"/>
@@ -302,7 +302,7 @@
             <p>If you haven't committed yet</p>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
-              <pre><code contenteditable class ="command-line">
+              <pre><code class="command-line">
   change hello_world.txt
   git checkout hello_world.txt
               </code></pre>
@@ -314,7 +314,7 @@
             <h4>Undoing staged changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
-              <pre><code contenteditable class ="command-line">
+              <pre><code class="command-line">
 git add hello_world.txt
 git reset HEAD hello_world.txt
 git checkout hello_world.txt
@@ -327,7 +327,7 @@ git checkout hello_world.txt
             <h4>Undoing staged changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
-              <pre><code contenteditable class ="command-line">
+              <pre><code class="command-line">
 git add hello_world.txt
 git commit -am "Changing and committing some lines"
 git log --pretty=oneline
@@ -340,7 +340,7 @@ git revert [HASH]
             <h3>Nobody's Perfect</h3>
             <h4>Remove a file from staging</h4>
             <p>Create new file my_new_file.txt</p>
-              <pre><code contenteditable class ="command-line">
+              <pre><code class="command-line">
 git add my_new_file.txt
 git reset my_new_file.txt
               </code></pre>
@@ -349,11 +349,11 @@ git reset my_new_file.txt
             <h3>Nobody's Perfect</h3>
             <h4>Delete a file</h4>
             <p>Create new file my_other_file.txt</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git add my_other_file.txt
             </code></pre>
             <p>Manually delete your file</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git rm my_other_file.txt
             </code></pre>
           </section>
@@ -371,11 +371,11 @@ git rm my_other_file.txt
           <section>
             <h3>Branching</h3>
             <p>Create a new branch called version2</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git checkout -b version2
             </code></pre>
             <p>Add new lines to hello_world.txt</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git add hello_world.txt
 git commit -m "Adding changes to version 2"
             </code></pre>
@@ -384,15 +384,15 @@ git commit -m "Adding changes to version 2"
             <h3>Branching</h3>
             <h4>Switching branches</h4>
             <p>See all branches. Branch with * is active</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git branch
             </code></pre>
             <p>Switch to master and look at hello_world.txt</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git checkout master
             </code></pre>
             <p>Switch to version2 and look at hello_world.txt</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git checkout version2
             </code></pre>
           </section>
@@ -403,7 +403,7 @@ git checkout version2
             <h3>Merging</h3>
             <h4>Merge to get changes from one branch into another*</h4>
             <p>Switch to master and merge changes</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git checkout master
 git merge version2
             </code></pre>
@@ -413,12 +413,12 @@ git merge version2
             <h3>Merging</h3>
             <h4>Merge conflicts</h4>
             <p>Change first line in hello_world.txt in master branch</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git add hello_world.txt
 git commit -m "Changing first line in master"
             </code></pre>
             <p>Change first line in hello_world.txt in version2 branch</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git checkout version2
 # open hello_world.txt and change first line
 git add hello_world.txt
@@ -429,7 +429,7 @@ git commit -m "Changing first line in version2"
             <h3>Merging</h3>
             <h4>Merge conflicts, cont.</h4>
             <p>Merge from master into version2</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git merge master
             </code></pre>
             <p class ="fragment">You will be notified of a conflict. Go to the file and fix the problem. Then commit your edits.</p>
@@ -547,7 +547,7 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
           <section>
             <h3>GitHub</h3>
             <h4>Get Local Repository of GitHub Repo</h4>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 cd ../ # Back in root directory
 mkdir hello-github
 cd hello-github
@@ -560,7 +560,7 @@ git pull origin master
             <h3>GitHub</h3>
             <h4>Push to GitHub Repo</h4>
             <p>Edit the ReadMe file
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 git add README
 git commit -m "Updating readme file"
 git push origin master
@@ -571,7 +571,7 @@ git push origin master
             <h3>GitHub</h3>
             <h4>Pulling from remote repository</h4>
             <p>If you are working with a team, you want to make sure that you have everyone's changes before pushing your changes to the GitHub repo</p>
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 # Commit local changes
 git commit -m "My latest commit"
 # Pull changes other people have made
@@ -600,7 +600,7 @@ git push origin master
             <h3>Forking</h3>
             <h4>Cloning</h4>
             <p>Clone to get a local repository of your fork
-            <pre><code contenteditable class ="command-line">
+            <pre><code class="command-line">
 cd ../
 
 git clone https://github.com/username/FORKED-REPO-NAME.git
