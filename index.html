@@ -110,9 +110,6 @@
               <h4>Collaborate</h4>
               <p>Create anything with other people, from academic papers to entire websites and applications.</p>
             </div>
-            <aside class="notes">
-              Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-            </aside>
           </section>
           <section>
             <h3>Working without Version Control</h3>
@@ -175,13 +172,29 @@
               </div>
               <div class="fragment">
                 <dt>Branch</dt>
-                <dd>A parallel version of a repository where you can make changes witout affecting.</dd>
+                <dd>A parallel version of a repository where you can make changes without affecting the main version.</dd>
               </div>
               <div class="fragment">
                 <dt>Merge</dt>
                 <dd>Combining the changes from 2 branches back into a single branch</dd>
               </div>
             </dl>
+            <aside class="notes">The next slide gives space to walk through an example of what a series of commits and branches looks like</aside>
+          </section>
+          <section>
+            <h3>Intro to Git</h3>
+            <p>A whiteboard example</p>
+            <aside class="notes">
+              To go over:
+              <ol>
+                <li>Introduce empty shopping list file</li>
+                <li>Introduce first commit. Shopping list file on far right of board, commits in the middle</li>
+                <li>Introduce 2-3 commits to the file. Explain what the commit stores (the changes) and what the SHA is</li>
+                <li>Create a branch, and a duplicate version of the shopping list on left side of the board</li>
+                <li>Make changes to both branches</li>
+                <li>Merge the branches</li>
+              </ol>
+            </aside>
           </section>
         </section>
         <!-- Installation and Setup-->
@@ -457,8 +470,8 @@ oUnXO3Xa1HE5AqDoqWlojgbSD9JL5/8q6y0vPq8LNSAExw9r3ujWBlLyLyZbW7NmDGTQEesHjkBZsiVq
 wIcCsZu5lDZPRUyVHPGwIcCsZu5lDZPRUyVHPGyGf8NGsu6MZRwl0kpLqaU407aNPEr6dMto54zXsyGf8NGsu6MZRwl0kpLqaU407aNPEr6dMto54zXsGUthKBVnSVKZShkMeJZI35fwbDOOI8m/AsAKd2GRsLEmoKauvuQ3FPyyTl5cMUYTwL7h+zFwlYwlsaQ285AykonpPlrS4VTlep86Vi+jflu7c2PHdYBshopT0sGWCZEsl/OsJw==
 -----END RSA PRIVATE KEY-----</code></pre>
             </div>
-            <aside>Asymetric encryption, same technology as HTTPS to keep credit cards safe on the web.</aside>
-            <aside>You can give someone else your public key. They'll encrypt a secret with it, send it to you. You decrypt it with your private key, and then send it back to the other person. If you were able to decrypt the message they sent you, they know you are who you say you are</aside>
+            <aside class="notes">Asymetric encryption, same technology as HTTPS to keep credit cards safe on the web.</aside>
+            <aside class="notes">You can give someone else your public key. They'll encrypt a secret with it, send it to you. You decrypt it with your private key, and then send it back to the other person. If you were able to decrypt the message they sent you, they know you are who you say you are</aside>
           </section>
           <section>
             <h3>SSH Key</h3>
