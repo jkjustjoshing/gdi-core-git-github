@@ -51,8 +51,8 @@
     padding: 15px;
 }
 
-.reveal .small {
-	font-size: 70%;
+.reveal small {
+	line-height: inherit;
 }
 
 .reveal dl {

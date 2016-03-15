@@ -212,54 +212,113 @@
           <pre><code class="command-line">
 <span class="input">git config --list</span>
           </code></pre>
+
+          <small style="text-align: left">
+            <code>$</code> means "you type this".
+            <br>
+            <code>#</code> means "the computer will print this out".
+            <br>
+            Don't type the <code>$</code> into the terminal
+          </small>
         </section>
         <!-- First commands-->
         <section>
           <section>
             <h3>Your first Local Repository</h3>
-            <p>Go to home directory</p>
-            <pre><code class="command-line">
-  cd ~/
+
+            <p>Go to your home folder (aka "change directory")</p>
+            <pre><code class="command-line"><span class="input">cd ~/</span>
   OR
-  cd Users\username
-            </code></pre>
-            <p>Create a "working directory"</p>
-            <pre><code contenteditable class ="command-line">
-  mkdir my-first-repo
-  cd my-first-repo
-            </code></pre>
+<span class="input">cd Users\username</span></code></pre>
+
+            <p>Create a folder for our project (aka "make directory")</p>
+            <pre><code class="command-line"><span class="input">mkdir shopping-lists</span>
+<span class="input">cd shopping-lists</span></code></pre>
+
             <p>Initialize repository with Git</p>
-            <pre><code contenteditable class ="command-line">
-  git init
-  git status
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git init</span>
+<span class="input">git status</span></code></pre>
+
+            <aside class="notes">
+              <p>Remind the class that we're going to be in the command line a lot, so pay attention and try to remember what we type and why we type it.</p>
+
+              <p>Tell them to open the project in Sublime Text (emphasize the whole folder)</p>
+            </aside>
           </section>
           <section>
             <h3>Add files</h3>
-            <p>Create a new hello_world.txt file in your new folder</p>
+            <p>Create a new shopping list file in your new folder - <small>March-16.txt</small></p>
+
             <p>Check repo status</p>
-            <pre><code class="command-line">
-  git status
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git status</span>
+
+<span class="output">On branch master</span>
+<span class="output">Untracked files:</span>
+<span class="output">  (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span class="output"></span>
+<span class="output">  March-16.txt</span>
+<span class="output"></span>
+<span class="output">nothing added to commit but untracked files present (use "git add" to track)</span>
+</code></pre>
+
             <p>Tell Git to track our new file</p>
-            <pre><code class="command-line">
-  git add hello_world.txt
-  git status
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git add March-16.txt</span>
+<span class="input">git status</span></code></pre>
+
             <p>File is now tracked by Git</p>
+
+            <aside class="notes">Every file you create you'll need to add with "git add"</aside>
+          </section>
+          <section>
+            <h3>Our first commit</h3>
+            <p>Let's actually make a commit, saving our file in Git's history</p>
+            <pre class="fragment"><code class="command-line"><span class="input">git commit -m "Created shopping list for March 16th"</span>
+
+<span class="output">[master 8a1b630] Create new shopping list for today</span>
+<span class="output">1 file changed, 0 insertions(+), 0 deletions(-)</span>
+<span class="output">create mode 100644 March-16.txt</span></code></pre>
+
+            <p class="fragment">...and see what the commit looks like</p>
+
+            <pre class="fragment"><code class="command-line"><span class="input">git log</span>
+
+<span class="output">commit 8a1b630016b1e59e636da1e57a562ec94d999f1c
+<span class="output">Author: Josh Kramer &lt;jkjustjoshing@gmail.com&gt;</span>
+<span class="output">Date:   Wed Mar 16 19:30:45 2016 -0400</span>
+<span class="output"></span>
+<span class="output">    Create new shopping list for today</span>
+</code></pre>
+
+
           </section>
           <section>
             <h3>Changes and commits</h3>
-            <p>Open hello_world.txt and add some more text</p>
-            <pre><code class="command-line">
-  git status
-            </code></pre>
-            <p>Stage and commit the change</p>
+            <p>Open March-16.txt and add an item to the shopping list (and save)</p>
+            <pre class="fragment"><code class="command-line"><span class="input">git status</span>
+<span class="output">On branch master</span>
+<span class="output">Changes to be committed:</span>
+<span class="output">  (use "git reset HEAD &lt;file&gt;..." to unstage)</span>
+<span class="output"></span>
+<span class="output">  new file:   March-16.txt</span>
+<span class="output"></span>
+<span class="output">Changes not staged for commit:</span>
+<span class="output">  (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span class="output">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<span class="output"></span>
+<span class="output">  modified:   March-16.txt</span></code></pre>
+
+            <p class="fragment">What does "staged" mean?</p>
+          </section>
+          <section>
+            <h3>Staging files</h3>
+            <aside class="notes">Whiteboard!</aside>
+          </section>
+
+            <!-- <p>Stage and commit the change</p>
             <pre><code class="command-line">
   git add hello_world.txt
   git commit -m "First commit. Added hello world to repository."
-            </code></pre>
-          </section>
+            </code></pre> -->
         </section>
         <!-- Explanation-->
         <section>
@@ -514,15 +573,15 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
             <h3>SSH Key</h3>
             <p>Add SSH Key to Github</p>
             <ol>
-              <li class="small">Copy the SSH key to your clipboard.</li>
-              <li class="small">In the top right corner of any page, click your profile photo, then click Settings.</li>
-              <li class="small">In the user settings sidebar, click SSH keys.</li>
-              <li class="small">Click New SSH key.</li>
-              <li class="small">In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".</li>
-              <li class="small">Paste your key into the "Key" field.</li>
-              <li class="small">Click Add SSH key.</li>
+              <li><small>Copy the SSH key to your clipboard.</small></li>
+              <li><small>In the top right corner of any page, click your profile photo, then click Settings.</small></li>
+              <li><small>In the user settings sidebar, click SSH keys.</small></li>
+              <li><small>Click New SSH key.</small></li>
+              <li><small>In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".</small></li>
+              <li><small>Paste your key into the "Key" field.</small></li>
+              <li><small>Click Add SSH key.</small></li>
             </ol>
-            <a class="small" href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Github's instructions</a>
+            <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"><small>Github's instructions</small></a>
           </section>
         </section>
         <!-- New repository-->
@@ -642,8 +701,8 @@ git fetch upstream
         <section>
           <h2>Helpful Links</h2>
           <ul>
-            <li><a href="https://github.com/git/git/tree/master/contrib/completion">https://github.com/git/git/tree/master/contrib/completion</a> - branch name in command prompt and tab autocomplete</li>
-
+            <li><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" target="_blank">Git cheat sheet (courtesy GitHub)</a></li>
+            <li><a href="https://github.com/git/git/tree/master/contrib/completion" target="_blank">Branch name in command prompt and tab autocomplete</a></li>
           </ul>
         </section>
 			</div>
