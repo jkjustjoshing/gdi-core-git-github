@@ -314,11 +314,6 @@
             <aside class="notes">Whiteboard!</aside>
           </section>
 
-            <!-- <p>Stage and commit the change</p>
-            <pre><code class="command-line">
-  git add hello_world.txt
-  git commit -m "First commit. Added hello world to repository."
-            </code></pre> -->
         </section>
         <!-- Explanation-->
         <section>
@@ -332,7 +327,7 @@
 
             </ul>
           </section>
-          <section>
+<!--           <section>
             <h3>Look at our progress</h3>
             <pre><code class="command-line">
   git log
@@ -351,7 +346,7 @@
   gitk
             </code></pre>
             <img src = "images/gitk.png" alt ="Image of commits for this curriculum repo"/>
-          </section>
+          </section> -->
         </section>
         <!-- Undoing changes -->
         <section>
@@ -360,60 +355,60 @@
             <h4>Undoing local changes</h4>
             <p>If you haven't committed yet</p>
             <div class = "fragment">
-              <p>Open hello_world.txt and add some new text</p>
+              <p>Open March-16.txt and add some new text</p>
               <pre><code class="command-line">
-  change hello_world.txt
-  git checkout hello_world.txt
+  make a change to March-16.txt, then run
+<span class="input">git checkout March-16.txt</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
+            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Undoing staged changes</h4>
             <div class = "fragment">
-              <p>Open hello_world.txt and add some new text</p>
+              <p>Open March-16.txt and add some new text</p>
               <pre><code class="command-line">
-git add hello_world.txt
-git reset HEAD hello_world.txt
-git checkout hello_world.txt
+<span class="input">git add March-16.txt</span>
+<span class="input">git reset HEAD March-16.txt</span>
+<span class="input">git checkout March-16.txt</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
+            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Undoing staged changes</h4>
             <div class = "fragment">
-              <p>Open hello_world.txt and add some new text</p>
+              <p>Open March-16.txt and add some new text</p>
               <pre><code class="command-line">
-git add hello_world.txt
-git commit -am "Changing and committing some lines"
-git log --pretty=oneline
-git revert [HASH]
+<span class="input">git add March-16.txt</span>
+<span class="input">git commit -am "Changing and committing some lines"</span>
+<span class="input">git log --pretty=oneline</span>
+<span class="input">git revert [HASH]</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
+            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Remove a file from staging</h4>
-            <p>Create new file my_new_file.txt</p>
+            <p>Create new file April-2.txt</p>
               <pre><code class="command-line">
-git add my_new_file.txt
-git reset my_new_file.txt
+git add April-2.txt
+git reset April-2.txt
               </code></pre>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Delete a file</h4>
-            <p>Create new file my_other_file.txt</p>
+            <p>Create new file March-29.txt</p>
             <pre><code class="command-line">
-git add my_other_file.txt
+git add March-29.txt
             </code></pre>
             <p>Manually delete your file</p>
             <pre><code class="command-line">
-git rm my_other_file.txt
+git rm March-29.txt
             </code></pre>
           </section>
         </section>
@@ -433,9 +428,9 @@ git rm my_other_file.txt
             <pre><code class="command-line">
 git checkout -b version2
             </code></pre>
-            <p>Add new lines to hello_world.txt</p>
+            <p>Add new lines to March-16.txt</p>
             <pre><code class="command-line">
-git add hello_world.txt
+git add March-16.txt
 git commit -m "Adding changes to version 2"
             </code></pre>
           </section>
@@ -446,11 +441,11 @@ git commit -m "Adding changes to version 2"
             <pre><code class="command-line">
 git branch
             </code></pre>
-            <p>Switch to master and look at hello_world.txt</p>
+            <p>Switch to master and look at March-16.txt</p>
             <pre><code class="command-line">
 git checkout master
             </code></pre>
-            <p>Switch to version2 and look at hello_world.txt</p>
+            <p>Switch to version2 and look at March-16.txt</p>
             <pre><code class="command-line">
 git checkout version2
             </code></pre>
@@ -471,16 +466,16 @@ git merge version2
           <section>
             <h3>Merging</h3>
             <h4>Merge conflicts</h4>
-            <p>Change first line in hello_world.txt in master branch</p>
+            <p>Change first line in March-16.txt in master branch</p>
             <pre><code class="command-line">
-git add hello_world.txt
+git add March-16.txt
 git commit -m "Changing first line in master"
             </code></pre>
-            <p>Change first line in hello_world.txt in version2 branch</p>
+            <p>Change first line in March-16.txt in version2 branch</p>
             <pre><code class="command-line">
 git checkout version2
-# open hello_world.txt and change first line
-git add hello_world.txt
+# open March-16.txt and change first line
+git add March-16.txt
 git commit -m "Changing first line in version2"
             </code></pre>
           </section>
