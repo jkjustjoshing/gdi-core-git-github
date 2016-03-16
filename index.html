@@ -6,7 +6,9 @@
 
 		<title>Intro to Git and Github ~ Girl Develop It</title>
 
-		<meta name="description" content="This is the official Girl Develop It Core Intro to Git and GitHub course. Material based on original material by Kim Moir, Daniel Fischer, Aurelia Moser, Carina C. Zona and Izzy Johnston. 
+		<meta name="description" content="This is the official Girl Develop It Core Intro to Git and GitHub course. Material based on original material by Kim Moir, Daniel Fischer, Aurelia Moser, Carina C. Zona and Izzy Johnston.
+
+    This version has been edited by Josh Kramer
 
     The course is meant to be taught in a two-hour workshop. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
 		<meta name="author" content="Girl Develop It">
@@ -14,16 +16,17 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<link rel="stylesheet" href="reveal/css/reveal.css">
-		<link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+		<link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/gdicool.css" id="theme">
+    <link rel="stylesheet" href="custom.css">
 
 		<!-- For syntax highlighting -->
 		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
-		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+		<!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
 
 		<!-- If use the PDF print sheet so students can print slides-->
-		
-		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -37,11 +40,27 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 			  <!-- Opening slide -->
-        <section>
-          <img src = "images/gdi_logo_badge.png">
-          <h3>Intro to Git and Github</h3>
+        <section id="slide-1">
+          <h3>
+            <img src="images/gdi_logo_badge.png">
+            Intro to Git and Github
+            <br>
+          </h3>
+
+          <h4>While you're waiting</h4>
+          <ul>
+            <li><b>Create GitHub account:</b> <a href="https://github.com">github.com</a></li>
+            <li><b>Download and install git:</b> <a href="http://git-scm.com/downloads" target="_blank">git-scm.com/downloads</a></b>
+          </ul>
+          <br>
+
+          <br>
+          <p>I'll be using SublimeText as an editor for demoing, which I highly recommend. Download at <a href="https://www.sublimetext.com/3">www.sublimetext.com/3</a>
+          <br>
+          <br>
+          <small>Slides: http://joshkra.me/gdi-core-git-github</small>
         </section>
-        
+
         <!-- Welcome-->
         <section>
           <h3>Welcome!</h3>
@@ -56,7 +75,7 @@
           </ul>
           </div>
         </section>
-        
+
         <section>
           <h3>Welcome!</h3>
           <div class = "left-align">
@@ -64,32 +83,32 @@
           <ul>
             <li>Who are you?</li>
             <li>What do you hope to get out of the class?</li>
-            <li>Who was your favorite character as a child?</li>
+            <li>What is your favorite animal?</li>
           </ul>
           </div>
         </section>
-        
+
         <section>
           <h3>What we will cover today</h3>
           <ul>
-            <li class ="fragment">What is version control and why should we care?</li>
-            <li class ="fragment">Basics of git -- the essential commands</li>
+            <li class ="fragment">Version control - what and why?</li>
+            <li class ="fragment">git basics</li>
             <li class ="fragment">"Gitting" social with GitHub</li>
           </ul>
         </section>
-        
+
         <!-- Version control-->
         <section>
           <section>
             <h3>What is version control?</h3>
             <p>Version control allows you (and your team) to do two powerful things</p>
             <div class="fragment">
-              <h4>Collaborate</h4>
-              <p>Create anything with other people, from academic papers to entire websites and applications.</p>
-            </div>
-            <div class="fragment">
               <h4>Track and revert changes</h4>
               <p>Mistakes happen. Wouldn't it be nice if you could see the changes that have been made and go "back in time" to fix something that went wrong?
+            </div>
+            <div class="fragment">
+              <h4>Collaborate</h4>
+              <p>Create anything with other people, from academic papers to entire websites and applications.</p>
             </div>
           </section>
           <section>
@@ -123,129 +142,190 @@
               <p>Each client (person) has a local repository, which they can then reconcile with the main server.</p>
             </div>
           </section>
-          <section>
-            <h3>Version Control Distribution</h3>
-            <a href = "http://redmonk.com/sogrady/2012/11/05/dvcs-2012/" target="_blank" alt ="Centralized vs Decentralized Version Control: 2010 vs 2012"><img src = "images/subversion-share-2012.png" alt ="Version control share between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
-          </section>
            <section>
               <h3>Version Control Distribution Change</h3>
-              <a href = "http://redmonk.com/sogrady/2012/11/05/dvcs-2012/" target="_blank" alt ="Centralized vs Decentralized Version Control: 2010 vs 2012"><img src = "images/subversion-change-2010-2012.png" alt ="Version control distribution share between 2010 and 2012 between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
+              <a href = "http://redmonk.com/sogrady/2015/11/24/dvcs-and-git-2015/" target="_blank" alt ="Centralized vs Decentralized Version Control: 2010 vs 2012"><img src = "images/subversion-change-2010-2015.png" alt ="Version control distribution share between 2010 and 2012 between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
             </section>
         </section>
         <!-- Git-->
         <section>
-          <h3>Intro to Git</h3>
-          <p>Goals of Git Design</p>
-          <ul>
-            <li>Fast -- add to your team and code base quickly</li>
-            <li>Distributed (see slide above) </li>
-            <li>Each commit has a corresponding hash (track changes from everyone)</li>
-            <li>Everyone has a local copy of the history</li>
-          </ul>
+          <section>
+            <h3>Intro to Git</h3>
+            <p>Features</p>
+            <ul>
+              <li>Fast -- add to your team and code base quickly</li>
+              <li>Distributed (see previous slides) </li>
+              <li>Everyone has a local copy of the history</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Intro to Git</h3>
+            <p>Definitions</p>
+            <dl>
+              <div class="fragment">
+                <dt>Repository</dt>
+                <dd>A folder of files (and nested folders) that git is keeping track of.</dd>
+              </div>
+              <div class="fragment">
+                <dt>Commit</dt>
+                <dd>A set of changes to a file or multiple files.</dd>
+              </div>
+              <div class="fragment">
+                <dt>Branch</dt>
+                <dd>A parallel version of a repository where you can make changes without affecting the main version.</dd>
+              </div>
+              <div class="fragment">
+                <dt>Merge</dt>
+                <dd>Combining the changes from 2 branches back into a single branch</dd>
+              </div>
+            </dl>
+            <aside class="notes">The next slide gives space to walk through an example of what a series of commits and branches looks like</aside>
+          </section>
+          <section>
+            <h3>Intro to Git</h3>
+            <p>A whiteboard example</p>
+            <aside class="notes">
+              To go over:
+              <ol>
+                <li>Introduce empty shopping list file</li>
+                <li>Introduce first commit. Shopping list file on far right of board, commits in the middle</li>
+                <li>Introduce 2-3 commits to the file. Explain what the commit stores (the changes) and what the SHA is</li>
+                <li>Create a branch, and a duplicate version of the shopping list on left side of the board</li>
+                <li>Make changes to both branches</li>
+                <li>Merge the branches</li>
+              </ol>
+            </aside>
+          </section>
         </section>
         <!-- Installation and Setup-->
         <section>
           <section>
             <h3>Installation and Setup</h3>
-            <a href = "http://git-scm.com/downloads" alt ="Download latest version of Git" target ="_blank">
-              <p>Install git</p>
-              <img src = "images/install-git.png" alt = "Download latest version of Git"/>
-            </a>
-          </section>
-          <section>
-            <h3>Installation and Setup</h3>
-            <p>Setup ssh keys</p>
-            <pre><code contenteditable class ="command-line">
-             $ cd ~/.ssh
-            </code></pre>
-            <pre><code contenteditable class ="command-line">
-$ ssh-keygen -t rsa -C "your_email@example.com"
-# Generating public/private rsa key pair.
-# Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-            </code></pre>
-            <pre><code contenteditable class ="command-line">
-Enter passphrase (empty for no passphrase): [Type a passphrase]
-# Enter same passphrase again: [Type passphrase again]
-            </code></pre>
-          </section>
-          <section>
-            <h3>Installation and Setup</h3>
-            <p>Get SSH Key</p>
-            <pre><code contenteditable class ="command-line">
-Your identification has been saved in /Users/you/.ssh/id_rsa.
-# Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
-# The key fingerprint is:
-# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
-            </code></pre>
-          </section>
-          <section>
-            <h3>Installation and Setup</h3>
-            <p>Add SSH Key to Github</p>
-            <img src = "images/add-ssh.png" alt ="Steps to add SSH key to github account"/>
-          </section>
-          <section>
-            <h3>Installation and Setup</h3>
             <p>Setup name and email in gitconfig</p>
-            <pre><code contenteditable class ="command-line">
-$ git config --global user.name "Your Name Here"
-# Sets the default name for git to use when you commit
+            <pre><code class="command-line">
+  <span class="input">git config --global user.name "Your Name Here"</span>
+  <span class="output">Sets the default name for git to use when you commit</span>
             </code></pre>
-            <pre><code contenteditable class ="command-line">
-$ git config --global user.email "your_email@example.com"
-# Sets the default email for git to use when you commit
+            <pre><code class="command-line">
+  <span class="input">git config --global user.email "your_email@example.com"</span>
+  <span class="output">Sets the default email for git to use when you commit</span>
             </code></pre>
-            <pre><code contenteditable class ="command-line">
-$ git config --list
+            <pre><code class="command-line">
+  <span class="input">git config --list</span>
             </code></pre>
+
+            <small style="text-align: left">
+              <code>$</code> means "you type this".
+              <br>
+              <code>#</code> means "the computer will print this out".
+              <br>
+              Don't type the <code>$</code> into the terminal
+            </small>
+          </section>
+          <section>
+          <h3>Installation and Setup</h3>
+          <h4>Other setup</h4>
+
+          <p>Set up commit message editor</p>
+          <p>Windows - <a href="https://github.com/github/GitPad">GitPad</a></p>
+
+          <p>Mac - </p>
+          <pre><code class="command-line"><span class="input">git config --global core.editor "open -W"</span></code></pre>
           </section>
         </section>
         <!-- First commands-->
         <section>
           <section>
             <h3>Your first Local Repository</h3>
-            <p>Go to home directory</p>
-            <pre><code contenteditable class ="command-line">
-  cd ~/
+
+            <p>Go to your home folder (aka "change directory")</p>
+            <pre><code class="command-line"><span class="input">cd ~/</span>
   OR
-  cd Users\username
-            </code></pre>
-            <p>Create a "working directory"</p>
-            <pre><code contenteditable class ="command-line">
-  mkdir my-first-repo
-  cd my-first-repo
-            </code></pre>
+<span class="input">cd Users\username</span></code></pre>
+
+            <p>Create a folder for our project (aka "make directory")</p>
+            <pre><code class="command-line"><span class="input">mkdir shopping-lists</span>
+<span class="input">cd shopping-lists</span></code></pre>
+
             <p>Initialize repository with Git</p>
-            <pre><code contenteditable class ="command-line">
-  git init
-  git status
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git init</span>
+<span class="input">git status</span></code></pre>
+
+            <aside class="notes">
+              <p>Remind the class that we're going to be in the command line a lot, so pay attention and try to remember what we type and why we type it.</p>
+
+              <p>Tell them to open the project in Sublime Text (emphasize the whole folder)</p>
+            </aside>
           </section>
           <section>
             <h3>Add files</h3>
-            <p>Create a new hello_world.txt file in your new folder</p>
+            <p>Create a new shopping list file in your new folder - <small>March-16.txt</small></p>
+
             <p>Check repo status</p>
-            <pre><code contenteditable class ="command-line">
-  git status
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git status</span>
+
+<span class="output">On branch master</span>
+<span class="output">Untracked files:</span>
+<span class="output">  (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span class="output"></span>
+<span class="output">  March-16.txt</span>
+<span class="output"></span>
+<span class="output">nothing added to commit but untracked files present (use "git add" to track)</span>
+</code></pre>
+
             <p>Tell Git to track our new file</p>
-            <pre><code contenteditable class ="command-line">
-  git add hello_world.txt
-  git status
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git add March-16.txt</span>
+<span class="input">git status</span></code></pre>
+
             <p>File is now tracked by Git</p>
+
+            <aside class="notes">Every file you create you'll need to add with "git add"</aside>
+          </section>
+          <section>
+            <h3>Our first commit</h3>
+            <p>Let's actually make a commit, saving our file in Git's history</p>
+            <pre class="fragment"><code class="command-line"><span class="input">git commit -m "Created shopping list for March 16th"</span>
+
+<span class="output">[master 8a1b630] Create new shopping list for today</span>
+<span class="output">1 file changed, 0 insertions(+), 0 deletions(-)</span>
+<span class="output">create mode 100644 March-16.txt</span></code></pre>
+
+            <p class="fragment">...and see what the commit looks like</p>
+
+            <pre class="fragment"><code class="command-line"><span class="input">git log</span>
+
+<span class="output">commit 8a1b630016b1e59e636da1e57a562ec94d999f1c
+<span class="output">Author: Josh Kramer &lt;jkjustjoshing@gmail.com&gt;</span>
+<span class="output">Date:   Wed Mar 16 19:30:45 2016 -0400</span>
+<span class="output"></span>
+<span class="output">    Create new shopping list for today</span>
+</code></pre>
+
+
           </section>
           <section>
             <h3>Changes and commits</h3>
-            <p>Open hello_world.txt and add some more text</p>
-            <pre><code contenteditable class ="command-line">
-  git status
-            </code></pre>
-            <p>Stage and commit the change</p>
-            <pre><code contenteditable class ="command-line">
-  git add hello_world.txt
-  git commit -m "First commit. Added hello world to repository."
-            </code></pre>
+            <p>Open March-16.txt and add 3 or 4 items to the shopping list (and save)</p>
+            <pre class="fragment"><code class="command-line"><span class="input">git status</span>
+<span class="output">On branch master</span>
+<span class="output">Changes to be committed:</span>
+<span class="output">  (use "git reset HEAD &lt;file&gt;..." to unstage)</span>
+<span class="output"></span>
+<span class="output">  new file:   March-16.txt</span>
+<span class="output"></span>
+<span class="output">Changes not staged for commit:</span>
+<span class="output">  (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span class="output">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<span class="output"></span>
+<span class="output">  modified:   March-16.txt</span></code></pre>
+
+            <p class="fragment">What does "staged" mean?</p>
           </section>
+          <section>
+            <h3>Staging files</h3>
+            <aside class="notes">Whiteboard!</aside>
+          </section>
+
         </section>
         <!-- Explanation-->
         <section>
@@ -256,91 +336,72 @@ $ git config --list
               <li class="fragment">When we <span class ="green">add</span> a new file, we tell Git to add the file to the repository to be tracked</li>
               <li class="fragment">When we <span class ="green">stage</span> an existing file (also with the keyword 'add'), we are telling Git to track the current state of our file</li>
               <li class="fragment">A <span class ="green">commit</span> saves changes made to a file, not the file as a whole. The commit will have a 'hash' so we can track which changes were committed when and by whom.</li>
-            
-            </ul>
-          </section>
-          <section>
-            <h3>Look at our progress</h3>
-            <pre><code contenteditable class ="command-line">
-  git log
-            </code></pre>
-            <pre><code contenteditable class ="command-line">
-  commit [HASH HERE]
-  Author: Your name <you@your-email.com>
-  Date:   [DATE HERE]
 
-      First commit. Added hello world to repository.
-              </code></pre>
-          </section>
-          <section>
-            <h3>Look at our progress, visually</h3>
-            <pre><code contenteditable class ="command-line">
-  gitk
-            </code></pre>
-            <img src = "images/gitk.png" alt ="Image of commits for this curriculum repo"/>
+            </ul>
           </section>
         </section>
         <!-- Undoing changes -->
         <section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing local changes</h4> 
+            <h4>Undoing local changes</h4>
             <p>If you haven't committed yet</p>
             <div class = "fragment">
-              <p>Open hello_world.txt and add some new text</p>
-              <pre><code contenteditable class ="command-line">
-  change hello_world.txt
-  git checkout hello_world.txt
+              <p>Open March-16.txt and add some new text</p>
+              <pre><code class="command-line">
+  make a change to March-16.txt, then run
+<span class="input">git checkout March-16.txt</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
+            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
+            <aside class="notes">SKIM! I don't really like this section, so skim through it</aside>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4> 
+            <h4>Undoing staged changes</h4>
             <div class = "fragment">
-              <p>Open hello_world.txt and add some new text</p>
-              <pre><code contenteditable class ="command-line">
-git add hello_world.txt
-git reset HEAD hello_world.txt
-git checkout hello_world.txt
+              <p>Open March-16.txt and add some new text</p>
+              <pre><code class="command-line">
+<span class="input">git add March-16.txt</span>
+<span class="input">git reset HEAD March-16.txt</span>
+<span class="input">git checkout March-16.txt</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
+            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4> 
+            <h4>Undoing staged changes</h4>
             <div class = "fragment">
-              <p>Open hello_world.txt and add some new text</p>
-              <pre><code contenteditable class ="command-line">
-git add hello_world.txt
-git commit -am "Changing and committing some lines"
-git log --pretty=oneline
-git revert [HASH]
+              <p>Open March-16.txt and add some new text</p>
+              <pre><code class="command-line">
+<span class="input">git add March-16.txt</span>
+<span class="input">git commit -am "Changing and committing some lines"</span>
+<span class="input">git log --pretty=oneline</span>
+<span class="input">git revert [HASH]</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
+            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Remove a file from staging</h4>
-            <p>Create new file my_new_file.txt</p>
-              <pre><code contenteditable class ="command-line">
-git add my_new_file.txt
-git reset my_new_file.txt
+            <p>Create new file April-2.txt</p>
+              <pre><code class="command-line">
+<span class="input">git add April-2.txt</span>
+<span class="input">git reset April-2.txt</span>
               </code></pre>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Delete a file</h4>
-            <p>Create new file my_other_file.txt</p>
-            <pre><code contenteditable class ="command-line">
-git add my_other_file.txt
+            <p>Create new file March-29.txt</p>
+            <pre><code class="command-line">
+<span class="input">git add March-29.txt</span>
             </code></pre>
             <p>Manually delete your file</p>
-            <pre><code contenteditable class ="command-line">
-git rm my_other_file.txt
+            <pre><code class="command-line">
+<span class="input">git rm March-29.txt</span>
             </code></pre>
           </section>
         </section>
@@ -356,30 +417,45 @@ git rm my_other_file.txt
           </section>
           <section>
             <h3>Branching</h3>
-            <p>Create a new branch called version2</p>
-            <pre><code contenteditable class ="command-line">
-git checkout -b version2
+            <p>Create a new branch called moms-visit</p>
+            <pre><code class="command-line">
+<span class="input">git branch moms-visit</span>
+
+<span class="input">git branch</span>
+<span class="output"> * master</span>
+<span class="output">   moms-visit</span>
             </code></pre>
-            <p>Add new lines to hello_world.txt</p>
-            <pre><code contenteditable class ="command-line">
-git add hello_world.txt
-git commit -m "Adding changes to version 2"
+
+            <p>Switch to the moms-visit branch</p>
+            <pre><code class="command-line">
+<span class="input">git checkout moms-visit</span>
+<span class="output">Switched to branch 'moms-visit'</span>
+
+<span class="input">git branch</span>
+<span class="output">   master</span>
+<span class="output"> * moms-visit</span>
+            </code></pre>
+          </section>
+          <section>
+            <h3>Branching</h3>
+            <p>Add some things for mom to March-16.txt (and save!)</p>
+            <p class="fragment">Now stage the changes and commit them (can you remember how?)</p>
+            <pre class="fragment"><code class="command-line">
+<span class="input">git add March-16.txt</span>
+<span class="input">git commit -m "Adding some stuff for Mom"</span>
             </code></pre>
           </section>
           <section>
             <h3>Branching</h3>
             <h4>Switching branches</h4>
-            <p>See all branches. Branch with * is active</p>
-            <pre><code contenteditable class ="command-line">
-git branch
+
+            <p>Switch to master and look at March-16.txt</p>
+            <pre><code class="command-line">
+<span class="input">git checkout master</span>
             </code></pre>
-            <p>Switch to master and look at hello_world.txt</p>
-            <pre><code contenteditable class ="command-line">
-git checkout master
-            </code></pre>            
-            <p>Switch to version2 and look at hello_world.txt</p>
-            <pre><code contenteditable class ="command-line">
-git checkout version2
+            <p>Switch to moms-visit and look at March-16.txt</p>
+            <pre><code class="command-line">
+<span class="input">git checkout moms-visit</span>
             </code></pre>
           </section>
         </section>
@@ -389,37 +465,32 @@ git checkout version2
             <h3>Merging</h3>
             <h4>Merge to get changes from one branch into another*</h4>
             <p>Switch to master and merge changes</p>
-            <pre><code contenteditable class ="command-line">
-git checkout master
-git merge version2
+            <pre><code class="command-line">
+<span class="input">git checkout master</span>
+<span class="input">git merge moms-visit</span>
             </code></pre>
             <p>*rebase is another option, but will not be covered in this workshop</p>
           </section>
           <section>
             <h3>Merging</h3>
             <h4>Merge conflicts</h4>
-            <p>Change first line in hello_world.txt in master branch</p>
-            <pre><code contenteditable class ="command-line">
-git add hello_world.txt
-git commit -m "Changing first line in master"
-            </code></pre>
-            <p>Change first line in hello_world.txt in version2 branch</p>
-            <pre><code contenteditable class ="command-line">
-git checkout version2
-# open hello_world.txt and change first line
-git add hello_world.txt
-git commit -m "Changing first line in version2"
-            </code></pre>
+
+            <p class="fragment">Mom really wants some Rocky Road Ice Cream. Switch to the <b>moms-visit branch</b>, add some to the end of the shopping list, and <b>commit</b> the changes.</p>
+            <hr class="fragment">
+            <p class="fragment">Oh no!</p>
+            <p class="fragment">We forgot Friday is <a href="http://www.nationaldaycalendar.com/national-sloppy-joe-day-march-18/" target="_blank">National Sloppy Joe Day</a>!</p>
+
+            <p class="fragment">Since mom HATES sloppy joes, <b>switch to master</b>, add ground beef and onions to the end of the list, and <b>commit</b> the changes</p>
           </section>
           <section>
             <h3>Merging</h3>
             <h4>Merge conflicts, cont.</h4>
-            <p>Merge from master into version2</p>
-            <pre><code contenteditable class ="command-line">
+            <p>Merge from master into moms-visit</p>
+            <pre><code class="command-line">
 git merge master
             </code></pre>
             <p class ="fragment">You will be notified of a conflict. Go to the file and fix the problem. Then commit your edits.</p>
-                       
+
           </section>
         </section>
         <!-- GitHub-->
@@ -436,12 +507,87 @@ git merge master
             </ul>
           </section>
         </section>
+        <!-- SSH keys -->
+        <section>
+          <section id="ssh-key-slide">
+            <h3>SSH Key</h3>
+            <p>What is an SSH Key?</p>
+            <div style="width: 50%; float: left;">
+              <p>Public key</p>
+              <div class="pre">
+                <code class="javascript">
+                  ssh-rsa <br>
+                  AAAAB3NzaC1yc2EAAAADAQABAAACAQDgJxHLjuCNT2YKVuNw6DQz4Ga+OT14ShELCzIXDb7lxQHLH+ZXfSBCfNTwwWNzesv5kYtQDn/vTJsr+RSBxgyiZCvDbTE1rS4Gqt99zFqovOR7ixfotwfnvbAoFLv70m1K9dD68b7+EwgV4JvWlepdGvMQVr1JVi7QN8LWFLk1uLdALMUp/9VZ4ByWFp/PoqqC3VXlFOzJlGzzjVNDPE0XKFtd2p455k7BL15X0wfGuwQHGHn8+WbRnp9ts9SrCeLdrdY2AF9SWM6GsR9JeccFc4TpbYYZ/6x8o1RpPStXQvnd5Qyd2D77GROT6zJVJgdbodHBWuNgqZt5VlIJEhp+ifV2O1yPCByMLQ+ABYCH3shgyFkyIe8qh5gxzAhVkTSrf9M0fa5l8oMpZNMJRWj3RqRh4QYO85tdlhoOGhTwLMsm3WnT4fEruNq7q59YU/fDcCKleSkmkUzXQIMeCXko3a/3yHM/VH4uy3OOtRLO6sMx+xWL2l0qfg0dPa/tOTGTNfJi98n9Iw79mb81eRwXHYKkfUIpXf+FE7JrrjrOIxCyKY0xeRlgatpnxLybAtmxuuN67tlpkypqEUO7r7A1w48rCsdBHKF5HD2Cy8tIqagHqq6TbD/uvfglk4Y04GMD1bqEgxDFRfj6rha5X7wk6YQZ/8GFayxUfhP5j3H6jQ== jkjustjoshing@gmail.com
+                </code>
+              </div>
+            </div>
+            <div style="width: 50%; float: left;">
+              <p>Private key</p>
+              <div class="pre">
+                <code class="javascript">
+                  -----BEGIN RSA PRIVATE KEY-----<br>
+                  Proc-Type: 4,ENCRYPTED<br>
+                  DEK-Info: AES-128-CBC,179812BA4685<br>
+                  <br>
+                  oUnXO3Xa1HE5AqDoqWlojgbSD9JL5/8q6y0vPq8LNSAExw9r3ujWBlLyLyZbW7NmDGTQEesHjkBZsiVqfinsvY8UNvpCq7u3BwfWNcS0UIZGlkQp9cxwwpwmlAcRQ3SrlBizlkPfIUNsMG6G6gvTcs7cMBaOmVaweoe4EbMCgYAHHCdJ+T<br>
+                  ...<br>
+                  wIcCsZu5lDZPRUyVHPGwIcCsZu5lDZPRUyVHPGyGf8NGsu6MZRwl0kpLqaU407aNPEr6dMto54zXsyGf8NGsu6MZRwl0kpLqaU407aNPEr6dMto54zXsGUthKBVnSVKZShkMeJZI35fwbDOOI8m/AsAKd2GRsLEmoKauvuQ3FPyyTl5cMUYTwL7h+zFwlYwlsaQ285AykonpPlrS4VTlep86Vi+jflu7c2PHdYBshopT0sGWCZEsl/OsJw==<br>
+                  -----END RSA PRIVATE KEY-----
+                </code>
+              </div>
+            </div>
+            <aside class="notes">
+              <p>Asymetric encryption, same technology as HTTPS to keep credit cards safe on the web.</p>
+
+              <p>
+                You can give someone else your public key. They'll encrypt a secret with it, send it to you. You decrypt it with your private key, and then send it back to the other person. If you were able to decrypt the message they sent you, they know you are who you say you are
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>SSH Key</h3>
+            <p>Setup ssh keys</p><pre>
+            <code class="string-line">
+<span class="input">ssh-keygen -t rsa -C "your_email@example.com"</span>
+<span class="output">Generating public/private rsa key pair.</span>
+<span class="output">Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]</span>
+
+<span class="output">Enter passphrase (empty for no passphrase): [Type a passphrase]</span>
+
+<span class="output">Enter same passphrase again: [Type passphrase again]</span>
+            </code></pre>
+          </section>
+          <section>
+            <h3>SSH Key</h3>
+            <p>Get SSH Key</p>
+            <pre><code class="command-line">
+Your identification has been saved in /Users/you/.ssh/id_rsa.
+# Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+            </code></pre>
+          </section>
+          <section>
+            <h3>SSH Key</h3>
+            <p>Add SSH Key to Github</p>
+            <ol>
+              <li><small>Copy the SSH key to your clipboard.</small></li>
+              <li><small>In the top right corner of any page, click your profile photo, then click Settings.</small></li>
+              <li><small>In the user settings sidebar, click SSH keys.</small></li>
+              <li><small>Click New SSH key.</small></li>
+              <li><small>In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".</small></li>
+              <li><small>Paste your key into the "Key" field.</small></li>
+              <li><small>Click Add SSH key.</small></li>
+            </ol>
+            <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"><small>Github's instructions</small></a>
+          </section>
+        </section>
         <!-- New repository-->
         <section>
           <section>
             <h3>GitHub</h3>
             <h4>Create your first repository</h4>
-            <img src = "images/bootcamp_2_newrepo.jpg" alt ="How to create a new repository. Image from https://help.github.com/articles/create-a-repo"/>
+            <img src = "images/bootcamp_2_newrepo.png" alt ="How to create a new repository. Image from https://help.github.com/articles/create-a-repo"/>
           </section>
           <section>
             <h3>GitHub</h3>
@@ -458,40 +604,38 @@ git merge master
           <section>
             <h3>GitHub</h3>
             <h4>Get Local Repository of GitHub Repo</h4>
-            <pre><code contenteditable class ="command-line">
-cd ../ # Back in root directory
-mkdir hello-github
-cd hello-github
-git init
-git remote add origin git@github.com:username/NAME-OF-REPO
-git pull origin master
-            </code></pre>
+            <pre><code class="command-line"><span class="input">cd ../ # Back in root directory</span>
+<span class="input">git clone git@github.com:username/NAME-OF-REPO</span>
+<span class="input">cd NAME-OF-REPO</span></code></pre>
+
+            <aside class="notes">Talk about the difference between SSH and HTTPS</aside>
           </section>
           <section>
             <h3>GitHub</h3>
             <h4>Push to GitHub Repo</h4>
             <p>Edit the ReadMe file
-            <pre><code contenteditable class ="command-line">
-git add README
-git commit -m "Updating readme file"
-git push origin master
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git add README</span>
+<span class="input">git commit -m "Updating readme file"</span>
+<span class="input">git push origin master</span> </code></pre>
             <p class ="fragment">Go look at your github repo online</p>
           </section>
           <section>
             <h3>GitHub</h3>
             <h4>Pulling from remote repository</h4>
             <p>If you are working with a team, you want to make sure that you have everyone's changes before pushing your changes to the GitHub repo</p>
-            <pre><code contenteditable class ="command-line">
-# Commit local changes
-git commit -m "My latest commit"
-# Pull changes other people have made
-git pull origin master
-# Fix any conflicts (see merge conflicts above) and commit
-git commit -m "Fixing merging conflicts"
-# push local changes to GitHub
-git push origin master
+            <pre><code class="command-line">- Commit local changes
+<span class="input">git commit -m "My latest commit"</span>
+
+ - Pull changes other people have made
+<span class="input">git pull origin master</span>
+
+ - Fix any conflicts (see merge conflicts above) and commit
+<span class="input">git commit -m "Fixing merging conflicts"</span>
+
+ - push local changes to GitHub
+<span class="input">git push origin master</span>
             </code></pre>
+            <aside class="notes">Try making a change and pushing to master of presentation repository. Alex should have pushed a change preventing this from working</aside>
           </section>
         </section>
         <!-- Fork a repository-->
@@ -505,25 +649,27 @@ git push origin master
           </section>
           <section>
             <h3>Forking</h3>
-            <img src = "images/bootcamp_3_fork.jpg" alt ="How to fork a repository. Image from https://help.github.com/articles/fork-a-repo"/>
+            <img src = "images/bootcamp_3_fork.png" alt ="How to fork a repository. Image from https://help.github.com/articles/fork-a-repo"/>
+            <p style="font-size:12px">In-depth forking instructions at <a href="https://help.github.com/articles/fork-a-repo/" target="_blank">https://help.github.com/articles/fork-a-repo/</a></p>
           </section>
           <section>
             <h3>Forking</h3>
-            <h4>Cloning</h4>
+            <h4>Cloning and Remotes</h4>
             <p>Clone to get a local repository of your fork
-            <pre><code contenteditable class ="command-line">
-cd ../
+            <pre><code class="command-line"><span class="input">cd ../</span>
 
-git clone https://github.com/username/FORKED-REPO-NAME.git
+<span class="input">git clone git@github.com:YOUR-USERNAME/FORKED-REPO-NAME.git
 
-cd FORKED-REPO-NAME
+<span class="input">cd FORKED-REPO-NAME</span>
 
-git remote add upstream https://github.com/original-username/FORKED-REPO-NAME.git
-# Assigns the original repository to a remote called "upstream"
+  - Assigns the original repository to a remote called "upstream"
+<span class="input">git remote add upstream https://github.com/original-username/FORKED-REPO-NAME.git</span>
 
-git fetch upstream
-# Pulls in changes not present in your local repository, without modifying your files
+ - Pulls in changes not present in your local repository, without modifying your files
+<span class="input">git fetch upstream</span>
             </code></pre>
+
+            <aside class="notes">Fork the GDI git presentation repository. <a href="https://girldevelopit.github.io/gdi-core-git-github/#/5/3" target="_blank">This</a> image is out of date, replace with image from http://redmonk.com/sogrady/2015/11/24/dvcs-and-git-2015/ and submit a pull request (SUBMIT PR IN NEXT SET OF SLIDES).</aside>
           </section>
         </section>
         <!-- Pull requests-->
@@ -549,11 +695,23 @@ git fetch upstream
              <p>How to manage pull requests is out of the scope of this short workshop, but you can learn more from the <a href = "https://help.github.com/categories/63/articles" target ="_blank" alt = "Links to tutorials on pull requests and collaboration">Github Collaborating Tutorials</a>
           </section>
         </section>
+        <section>
+          <h3>Graphical Tools</h3>
+
+          <ul>
+            <li><a href="https://rowanj.github.io/gitx/" target="_blank">GitX</a>, my favorite (specifically the rowanj fork linked here, Mac only)</li>
+            <li><a href="https://www.sourcetreeapp.com/" target="_blank">Sourcetree</a>, a very popular one</li>
+            <li>And of course, <a href="https://desktop.github.com/" target="_blank">GitHub</a> has a GUI you can install!</li>
+          </ul>
+        </section>
         <!-- -->
         <section>
-          <h2>Questions?</h2>
-          <div style = "font-size:1200%; height:100%; margin-top:40%" class ="blue">?
-            <div class ="clear"></div></div>
+          <h2>Helpful Links</h2>
+          <ul>
+            <li><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" target="_blank">Git cheat sheet (courtesy GitHub)</a></li>
+            <li><a href="https://github.com/git/git/tree/master/contrib/completion" target="_blank">Branch name in command prompt and tab autocomplete</a></li>
+            <li><a href="http://slack.gdiroc.com/" target="_blank">GDI Rochester Slack</a></li>
+          </ul>
         </section>
 			</div>
   		<footer>
@@ -565,8 +723,8 @@ git fetch upstream
 		</div>
 
 
-		<script src="reveal/lib/js/head.min.js"></script>
-		<script src="reveal/js/reveal.min.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
 
@@ -582,12 +740,12 @@ git fetch upstream
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					// { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 

@@ -25,8 +25,8 @@ var RevealNotes = (function() {
 		/**
 		 * Posts the current slide data to the notes window
 		 *
-		 * @param {String} eventType Expecting 'slidechanged', 'fragmentshown' 
-		 * or 'fragmenthidden' set in the events above to define the needed 
+		 * @param {String} eventType Expecting 'slidechanged', 'fragmentshown'
+		 * or 'fragmenthidden' set in the events above to define the needed
 		 * slideDate.
 		 */
 		function post( eventType ) {
