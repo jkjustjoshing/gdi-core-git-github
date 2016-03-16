@@ -293,7 +293,7 @@
           </section>
           <section>
             <h3>Changes and commits</h3>
-            <p>Open March-16.txt and add an item to the shopping list (and save)</p>
+            <p>Open March-16.txt and add 3 or 4 items to the shopping list (and save)</p>
             <pre class="fragment"><code class="command-line"><span class="input">git status</span>
 <span class="output">On branch master</span>
 <span class="output">Changes to be committed:</span>
@@ -425,31 +425,53 @@
           </section>
           <section>
             <h3>Branching</h3>
-            <p>Create a new branch called version2</p>
+            <p>Create a new branch called moms-visit</p>
             <pre><code class="command-line">
-git checkout -b version2
+<span class="input">git branch moms-visit</span>
+
+<span class="input">git branch</span>
+<span class="output"> * master</span>
+<span class="output">   moms-visit</span>
             </code></pre>
-            <p>Add new lines to March-16.txt</p>
+
+            <p>Switch to the moms-visit branch</p>
             <pre><code class="command-line">
-git add March-16.txt
-git commit -m "Adding changes to version 2"
+<span class="input">git checkout moms-visit</span>
+<span class="output">Switched to branch 'moms-visit'</span>
+
+<span class="input">git branch</span>
+<span class="output">   master</span>
+<span class="output"> * moms-visit</span>
+            </code></pre>
+          </section>
+          <section>
+            <h3>Branching</h3>
+            <p>Add some things for mom to March-16.txt (and save!)</p>
+            <p class="fragment">Now stage the changes and commit them (can you remember how?)</p>
+            <pre class="fragment"><code class="command-line">
+<span class="input">git add March-16.txt</span>
+<span class="input">git commit -m "Adding some stuff for Mom"</span>
             </code></pre>
           </section>
           <section>
             <h3>Branching</h3>
             <h4>Switching branches</h4>
-            <p>See all branches. Branch with * is active</p>
-            <pre><code class="command-line">
-git branch
-            </code></pre>
+
             <p>Switch to master and look at March-16.txt</p>
             <pre><code class="command-line">
-git checkout master
+<span class="input">git checkout master</span>
             </code></pre>
-            <p>Switch to version2 and look at March-16.txt</p>
+            <p>Switch to moms-visit and look at March-16.txt</p>
             <pre><code class="command-line">
-git checkout version2
+<span class="input">git checkout moms-visit</span>
             </code></pre>
+          </section>
+          <section>
+            <h3>Branching</h3>
+            <p class="fragment">Oh no!</p>
+            <p class="fragment">We forgot Friday is <a href="http://www.nationaldaycalendar.com/national-sloppy-joe-day-march-18/" target="_blank">National Sloppy Joe Day</a>!</p>
+
+            <p class="fragment"><b>Switch to master</b>, add ground beef and onions to the shopping list, and commit the changes</p>
           </section>
         </section>
         <!-- Merging-->
@@ -460,7 +482,7 @@ git checkout version2
             <p>Switch to master and merge changes</p>
             <pre><code class="command-line">
 git checkout master
-git merge version2
+git merge moms-visit
             </code></pre>
             <p>*rebase is another option, but will not be covered in this workshop</p>
           </section>
@@ -472,18 +494,18 @@ git merge version2
 git add March-16.txt
 git commit -m "Changing first line in master"
             </code></pre>
-            <p>Change first line in March-16.txt in version2 branch</p>
+            <p>Change first line in March-16.txt in moms-visit branch</p>
             <pre><code class="command-line">
-git checkout version2
+git checkout moms-visit
 # open March-16.txt and change first line
 git add March-16.txt
-git commit -m "Changing first line in version2"
+git commit -m "Changing first line in moms-visit"
             </code></pre>
           </section>
           <section>
             <h3>Merging</h3>
             <h4>Merge conflicts, cont.</h4>
-            <p>Merge from master into version2</p>
+            <p>Merge from master into moms-visit</p>
             <pre><code class="command-line">
 git merge master
             </code></pre>
