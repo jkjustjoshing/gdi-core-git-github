@@ -622,27 +622,28 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
             <h3>GitHub</h3>
             <h4>Push to GitHub Repo</h4>
             <p>Edit the ReadMe file
-            <pre><code class="command-line">
-git add README
-git commit -m "Updating readme file"
-git push origin master
-            </code></pre>
+            <pre><code class="command-line"><span class="input">git add README</span>
+<span class="input">git commit -m "Updating readme file"</span>
+<span class="input">git push origin master</span> </code></pre>
             <p class ="fragment">Go look at your github repo online</p>
           </section>
           <section>
             <h3>GitHub</h3>
             <h4>Pulling from remote repository</h4>
             <p>If you are working with a team, you want to make sure that you have everyone's changes before pushing your changes to the GitHub repo</p>
-            <pre><code class="command-line">
-# Commit local changes
-git commit -m "My latest commit"
-# Pull changes other people have made
-git pull origin master
-# Fix any conflicts (see merge conflicts above) and commit
-git commit -m "Fixing merging conflicts"
-# push local changes to GitHub
-git push origin master
+            <pre><code class="command-line">- Commit local changes
+<span class="input">git commit -m "My latest commit"</span>
+
+ - Pull changes other people have made
+<span class="input">git pull origin master</span>
+
+ - Fix any conflicts (see merge conflicts above) and commit
+<span class="input">git commit -m "Fixing merging conflicts"</span>
+
+ - push local changes to GitHub
+<span class="input">git push origin master</span>
             </code></pre>
+            <aside class="notes">Try making a change and pushing to master of presentation repository. Alex should have pushed a change preventing this from working</aside>
           </section>
         </section>
         <!-- Fork a repository-->
@@ -656,25 +657,27 @@ git push origin master
           </section>
           <section>
             <h3>Forking</h3>
-            <img src = "images/bootcamp_3_fork.jpg" alt ="How to fork a repository. Image from https://help.github.com/articles/fork-a-repo"/>
+            <img src = "images/bootcamp_3_fork.png" alt ="How to fork a repository. Image from https://help.github.com/articles/fork-a-repo"/>
+            <p style="font-size:12px">In-depth forking instructions at <a href="https://help.github.com/articles/fork-a-repo/" target="_blank">https://help.github.com/articles/fork-a-repo/</a></p>
           </section>
           <section>
             <h3>Forking</h3>
-            <h4>Cloning</h4>
+            <h4>Cloning and Remotes</h4>
             <p>Clone to get a local repository of your fork
-            <pre><code class="command-line">
-cd ../
+            <pre><code class="command-line"><span class="input">cd ../</span>
 
-git clone https://github.com/username/FORKED-REPO-NAME.git
+<span class="input">git clone git@github.com:YOUR-USERNAME/FORKED-REPO-NAME.git
 
-cd FORKED-REPO-NAME
+<span class="input">cd FORKED-REPO-NAME</span>
 
-git remote add upstream https://github.com/original-username/FORKED-REPO-NAME.git
-# Assigns the original repository to a remote called "upstream"
+  - Assigns the original repository to a remote called "upstream"
+<span class="input">git remote add upstream https://github.com/original-username/FORKED-REPO-NAME.git</span>
 
-git fetch upstream
-# Pulls in changes not present in your local repository, without modifying your files
+ - Pulls in changes not present in your local repository, without modifying your files
+<span class="input">git fetch upstream</span>
             </code></pre>
+
+            <aside class="notes">Fork the GDI git presentation repository. <a href="https://girldevelopit.github.io/gdi-core-git-github/#/5/3" target="_blank">This</a> image is out of date, replace with image from http://redmonk.com/sogrady/2015/11/24/dvcs-and-git-2015/ and submit a pull request (SUBMIT PR IN NEXT SET OF SLIDES).</aside>
           </section>
         </section>
         <!-- Pull requests-->
