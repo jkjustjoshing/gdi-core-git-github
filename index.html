@@ -466,13 +466,6 @@
 <span class="input">git checkout moms-visit</span>
             </code></pre>
           </section>
-          <section>
-            <h3>Branching</h3>
-            <p class="fragment">Oh no!</p>
-            <p class="fragment">We forgot Friday is <a href="http://www.nationaldaycalendar.com/national-sloppy-joe-day-march-18/" target="_blank">National Sloppy Joe Day</a>!</p>
-
-            <p class="fragment"><b>Switch to master</b>, add ground beef and onions to the shopping list, and commit the changes</p>
-          </section>
         </section>
         <!-- Merging-->
         <section>
@@ -481,26 +474,21 @@
             <h4>Merge to get changes from one branch into another*</h4>
             <p>Switch to master and merge changes</p>
             <pre><code class="command-line">
-git checkout master
-git merge moms-visit
+<span class="input">git checkout master</span>
+<span class="input">git merge moms-visit</span>
             </code></pre>
             <p>*rebase is another option, but will not be covered in this workshop</p>
           </section>
           <section>
             <h3>Merging</h3>
             <h4>Merge conflicts</h4>
-            <p>Change first line in March-16.txt in master branch</p>
-            <pre><code class="command-line">
-git add March-16.txt
-git commit -m "Changing first line in master"
-            </code></pre>
-            <p>Change first line in March-16.txt in moms-visit branch</p>
-            <pre><code class="command-line">
-git checkout moms-visit
-# open March-16.txt and change first line
-git add March-16.txt
-git commit -m "Changing first line in moms-visit"
-            </code></pre>
+
+            <p class="fragment">Mom really wants some Rocky Road Ice Cream. Switch to the <b>moms-visit branch</b>, add some to the end of the shopping list, and <b>commit</b> the changes.</p>
+            <hr class="fragment">
+            <p class="fragment">Oh no!</p>
+            <p class="fragment">We forgot Friday is <a href="http://www.nationaldaycalendar.com/national-sloppy-joe-day-march-18/" target="_blank">National Sloppy Joe Day</a>!</p>
+
+            <p class="fragment">Since mom HATES sloppy joes, <b>switch to master</b>, add ground beef and onions to the end of the list, and <b>commit</b> the changes</p>
           </section>
           <section>
             <h3>Merging</h3>
