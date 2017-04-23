@@ -268,7 +268,7 @@
           </section>
           <section>
             <h3>Add files</h3>
-            <p>Create a new shopping list file in your new folder - <small>March-16.txt</small></p>
+            <p>Create a new shopping list file in your new folder - <small>April-24.txt</small></p>
 
             <p>Check repo status</p>
             <pre><code class="command-line"><span class="input">git status</span>
@@ -277,13 +277,13 @@
 <span class="output">Untracked files:</span>
 <span class="output">  (use "git add &lt;file&gt;..." to include in what will be committed)</span>
 <span class="output"></span>
-<span class="output">  March-16.txt</span>
+<span class="output">  April-24.txt</span>
 <span class="output"></span>
 <span class="output">nothing added to commit but untracked files present (use "git add" to track)</span>
 </code></pre>
 
             <p>Tell Git to track our new file</p>
-            <pre><code class="command-line"><span class="input">git add March-16.txt</span>
+            <pre><code class="command-line"><span class="input">git add April-24.txt</span>
 <span class="input">git status</span></code></pre>
 
             <p>File is now tracked by Git</p>
@@ -293,11 +293,11 @@
           <section>
             <h3>Our first commit</h3>
             <p>Let's actually make a commit, saving our file in Git's history</p>
-            <pre class="fragment"><code class="command-line"><span class="input">git commit -m "Created shopping list for March 16th"</span>
+            <pre class="fragment"><code class="command-line"><span class="input">git commit -m "Create new shopping list for today"</span>
 
 <span class="output">[master 8a1b630] Create new shopping list for today</span>
 <span class="output">1 file changed, 0 insertions(+), 0 deletions(-)</span>
-<span class="output">create mode 100644 March-16.txt</span></code></pre>
+<span class="output">create mode 100644 April-24.txt</span></code></pre>
 
             <p class="fragment">...and see what the commit looks like</p>
 
@@ -305,7 +305,7 @@
 
 <span class="output">commit 8a1b630016b1e59e636da1e57a562ec94d999f1c
 <span class="output">Author: Josh Kramer &lt;jkjustjoshing@gmail.com&gt;</span>
-<span class="output">Date:   Wed Mar 16 19:30:45 2016 -0400</span>
+<span class="output">Date:   Mon Apr 24 19:30:45 2017 -0400</span>
 <span class="output"></span>
 <span class="output">    Create new shopping list for today</span>
 </code></pre>
@@ -314,19 +314,19 @@
           </section>
           <section>
             <h3>Changes and commits</h3>
-            <p>Open March-16.txt and add 3 or 4 items to the shopping list (and save)</p>
+            <p>Open April-24.txt and add 3 or 4 items to the shopping list (and save)</p>
             <pre class="fragment"><code class="command-line"><span class="input">git status</span>
 <span class="output">On branch master</span>
 <span class="output">Changes to be committed:</span>
 <span class="output">  (use "git reset HEAD &lt;file&gt;..." to unstage)</span>
 <span class="output"></span>
-<span class="output">  new file:   March-16.txt</span>
+<span class="output">  new file:   April-24.txt</span>
 <span class="output"></span>
 <span class="output">Changes not staged for commit:</span>
 <span class="output">  (use "git add &lt;file&gt;..." to update what will be committed)</span>
 <span class="output">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
 <span class="output"></span>
-<span class="output">  modified:   March-16.txt</span></code></pre>
+<span class="output">  modified:   April-24.txt</span></code></pre>
 
             <p class="fragment">What does "staged" mean?</p>
           </section>
@@ -356,61 +356,61 @@
             <h4>Undoing local changes</h4>
             <p>If you haven't committed yet</p>
             <div class = "fragment">
-              <p>Open March-16.txt and add some new text</p>
+              <p>Open April-24.txt and add some new text</p>
               <pre><code class="command-line">
-  make a change to March-16.txt, then run
-<span class="input">git checkout March-16.txt</span>
+  make a change to April-24.txt, then run
+<span class="input">git checkout April-24.txt</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
+            <p class="fragment">Look at April-24.txt. Your changes are gone.</p>
             <aside class="notes">SKIM! I don't really like this section, so skim through it</aside>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Undoing staged changes</h4>
             <div class = "fragment">
-              <p>Open March-16.txt and add some new text</p>
+              <p>Open April-24.txt and add some new text</p>
               <pre><code class="command-line">
-<span class="input">git add March-16.txt</span>
-<span class="input">git reset HEAD March-16.txt</span>
-<span class="input">git checkout March-16.txt</span>
+<span class="input">git add April-24.txt</span>
+<span class="input">git reset HEAD April-24.txt</span>
+<span class="input">git checkout April-24.txt</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
+            <p class="fragment">Look at April-24.txt. Your changes are gone.</p>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Undoing staged changes</h4>
             <div class = "fragment">
-              <p>Open March-16.txt and add some new text</p>
+              <p>Open April-24.txt and add some new text</p>
               <pre><code class="command-line">
-<span class="input">git add March-16.txt</span>
+<span class="input">git add April-24.txt</span>
 <span class="input">git commit -am "Changing and committing some lines"</span>
 <span class="input">git log --pretty=oneline</span>
 <span class="input">git revert [HASH]</span>
               </code></pre>
             </div>
-            <p class="fragment">Look at March-16.txt. Your changes are gone.</p>
+            <p class="fragment">Look at April-24.txt. Your changes are gone.</p>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Remove a file from staging</h4>
-            <p>Create new file April-2.txt</p>
+            <p>Create new file May-5.txt</p>
               <pre><code class="command-line">
-<span class="input">git add April-2.txt</span>
-<span class="input">git reset April-2.txt</span>
+<span class="input">git add May-5.txt</span>
+<span class="input">git reset May-5.txt</span>
               </code></pre>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Delete a file</h4>
-            <p>Create new file March-29.txt</p>
+            <p>Create new file April-29.txt</p>
             <pre><code class="command-line">
-<span class="input">git add March-29.txt</span>
+<span class="input">git add April-29.txt</span>
             </code></pre>
             <p>Manually delete your file</p>
             <pre><code class="command-line">
-<span class="input">git rm March-29.txt</span>
+<span class="input">git rm April-29.txt</span>
             </code></pre>
           </section>
         </section>
@@ -447,10 +447,10 @@
           </section>
           <section>
             <h3>Branching</h3>
-            <p>Add some things for mom to March-16.txt (and save!)</p>
+            <p>Add some things for mom to April-24.txt (and save!)</p>
             <p class="fragment">Now stage the changes and commit them (can you remember how?)</p>
             <pre class="fragment"><code class="command-line">
-<span class="input">git add March-16.txt</span>
+<span class="input">git add April-24.txt</span>
 <span class="input">git commit -m "Adding some stuff for Mom"</span>
             </code></pre>
           </section>
@@ -458,11 +458,11 @@
             <h3>Branching</h3>
             <h4>Switching branches</h4>
 
-            <p>Switch to master and look at March-16.txt</p>
+            <p>Switch to master and look at April-24.txt</p>
             <pre><code class="command-line">
 <span class="input">git checkout master</span>
             </code></pre>
-            <p>Switch to moms-visit and look at March-16.txt</p>
+            <p>Switch to moms-visit and look at April-24.txt</p>
             <pre><code class="command-line">
 <span class="input">git checkout moms-visit</span>
             </code></pre>
@@ -487,9 +487,9 @@
             <p class="fragment">Mom really wants some Rocky Road Ice Cream. Switch to the <b>moms-visit branch</b>, add some to the end of the shopping list, and <b>commit</b> the changes.</p>
             <hr class="fragment">
             <p class="fragment">Oh no!</p>
-            <p class="fragment">We forgot Friday is <a href="http://www.nationaldaycalendar.com/national-sloppy-joe-day-march-18/" target="_blank">National Sloppy Joe Day</a>!</p>
+            <p class="fragment">We forgot Wednesday is <a href="https://www.nationaldaycalendar.com/days-2/national-pretzel-day-april-26/" target="_blank">National Pretzel Day</a>!</p>
 
-            <p class="fragment">Since mom HATES sloppy joes, <b>switch to master</b>, add ground beef and onions to the end of the list, and <b>commit</b> the changes</p>
+            <p class="fragment">Since mom HATES pretzels, <b>switch to master</b>, add pretzels and mustard to the end of the list, and <b>commit</b> the changes</p>
           </section>
           <section>
             <h3>Merging</h3>
